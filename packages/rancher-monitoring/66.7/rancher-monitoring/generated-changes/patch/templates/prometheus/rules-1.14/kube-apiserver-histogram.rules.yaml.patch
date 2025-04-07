@@ -1,0 +1,9 @@
+--- charts-original/templates/prometheus/rules-1.14/kube-apiserver-histogram.rules.yaml
++++ charts/templates/prometheus/rules-1.14/kube-apiserver-histogram.rules.yaml
+@@ -50,4 +50,4 @@
+         {{- end }}
+       {{- end }}
+       record: cluster_quantile:apiserver_request_sli_duration_seconds:histogram_quantile
+-{{- end }}
+\ No newline at end of file
++{{- end }}

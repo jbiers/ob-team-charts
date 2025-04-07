@@ -7,6 +7,15 @@
  Do not change in-place! In order to change this file first read following link:
  https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack/hack
  */ -}}
+@@ -8,7 +8,7 @@
+ apiVersion: v1
+ kind: ConfigMap
+ metadata:
+-  namespace: {{ template "kube-prometheus-stack-grafana.namespace" . }}
++  namespace: {{ .Values.grafana.defaultDashboards.namespace }}
+   name: {{ printf "%s-%s" (include "kube-prometheus-stack.fullname" $) "apiserver" | trunc 63 | trimSuffix "-" }}
+   annotations:
+ {{ toYaml .Values.grafana.sidecar.dashboards.annotations | indent 4 }}
 @@ -20,5 +20,5 @@
  {{ include "kube-prometheus-stack.labels" $ | indent 4 }}
  data:
