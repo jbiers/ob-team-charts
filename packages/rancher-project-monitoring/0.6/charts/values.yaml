@@ -689,6 +689,7 @@ grafana:
     security:
       # Required to embed dashboards in Rancher Cluster Overview Dashboard on Cluster Explorer
       allow_embedding: true
+      angular_support_enabled: true
 
   deploymentStrategy:
     type: Recreate
